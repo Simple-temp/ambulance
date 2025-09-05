@@ -43,11 +43,11 @@ const Header = () => {
           >
             +880 5461512121
           </Box>
-          <Button color="inherit">Course</Button>
+          {/* <Button color="inherit">Course</Button>
           <Button color="inherit">About</Button>
           <Button color="inherit">Employment</Button>
           <Button color="inherit">FAQ</Button>
-          <Button color="inherit">Contact Us</Button>
+          <Button color="inherit">Contact Us</Button> */}
           <Link to="/tryai">
             <Button className="glow-button">Try AI Feature</Button>
           </Link>

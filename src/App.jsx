@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Locations from "./components/Common/Locations";
 import AdditionalClass from "./components/Common/AdditionalClass";
@@ -12,38 +12,134 @@ import Footer from "./components/Common/Footer";
 import Hero from "./components/Common/Hero";
 import TryAI from "./components/TryAI";
 
-function App() {
+import UserSideBar from "./components/Pages/UserSideBar";
+import UserProfile from "./components/Pages/UserProfile";
+import UserHistory from "./components/Pages/UserHistory";
+import UserSettings from "./components/Pages/UserSettings";
+import BookAmbulance from "./components/Pages/BookAmbulance";
+import Tracking from "./components/Pages/Tracking";
+import Feedback from "./components/Pages/Feedback";
+
+// Layout for normal pages (with Header + Footer)
+function MainLayout({ children }) {
   return (
     <>
-      <div>
-        <BrowserRouter>
-          <div className="d-flex inner-container">
-            <header>
-              <Header />
-            </header>
-
-            <main>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/hero" element={<Hero />} />
-                <Route path="/location" element={<Locations />} />
-                <Route path="/additonalclass" element={<AdditionalClass />} />
-                <Route path="/paramedic" element={<Paramedic />} />
-                <Route path="/videos" element={<VideoSection />} />
-                <Route path="/ourresource" element={<OurResource />} />
-                <Route path="/contact" element={<ContactUs />} />
-                <Route path="/testimonial" element={<Testimonial />} />
-                <Route path="/tryai" element={<TryAI />} />
-              </Routes>
-            </main>
-
-            <footer>
-              <Footer />
-            </footer>
-          </div>
-        </BrowserRouter>
-      </div>
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </>
+  );
+}
+
+// Layout for user pages (with sidebar only)
+function UserLayout() {
+  return (
+    <div style={{ display: "flex", height: "100vh" }}>
+      <UserSideBar />
+      <div style={{ flex: 1, padding: "20px" }}>
+        <Routes>
+          <Route path="profile" element={<UserProfile />} />
+          <Route path="history" element={<UserHistory />} />
+          <Route path="settings" element={<UserSettings />} />
+          <Route path="book-ambulance" element={<BookAmbulance />} />
+          <Route path="track-ambulance" element={<Tracking />} />
+          <Route path="feedback" element={<Feedback />} />
+        </Routes>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* MainLayout routes */}
+        <Route
+          path="/"
+          element={
+            <MainLayout>
+              <Home />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/hero"
+          element={
+            <MainLayout>
+              <Hero />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/location"
+          element={
+            <MainLayout>
+              <Locations />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/additonalclass"
+          element={
+            <MainLayout>
+              <AdditionalClass />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/paramedic"
+          element={
+            <MainLayout>
+              <Paramedic />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/videos"
+          element={
+            <MainLayout>
+              <VideoSection />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/ourresource"
+          element={
+            <MainLayout>
+              <OurResource />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <MainLayout>
+              <ContactUs />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/testimonial"
+          element={
+            <MainLayout>
+              <Testimonial />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/tryai"
+          element={
+            <MainLayout>
+              <TryAI />
+            </MainLayout>
+          }
+        />
+
+        {/* User routes (sidebar only) */}
+        <Route path="/user/*" element={<UserLayout />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
