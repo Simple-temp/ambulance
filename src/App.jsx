@@ -19,6 +19,7 @@ import UserSettings from "./components/Pages/UserSettings";
 import BookAmbulance from "./components/Pages/BookAmbulance";
 import Tracking from "./components/Pages/Tracking";
 import Feedback from "./components/Pages/Feedback";
+import AmbulanceList from "./components/Pages/AmbulanceList";
 
 // Layout for normal pages (with Header + Footer)
 function MainLayout({ children }) {
@@ -42,6 +43,7 @@ function UserLayout() {
           <Route path="history" element={<UserHistory />} />
           <Route path="settings" element={<UserSettings />} />
           <Route path="book-ambulance" element={<BookAmbulance />} />
+          <Route path="ambulance-list" element={<AmbulanceList />} />
           <Route path="track-ambulance" element={<Tracking />} />
           <Route path="feedback" element={<Feedback />} />
         </Routes>

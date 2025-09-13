@@ -95,6 +95,24 @@ const UserSideBar = () => {
           <ListItem disablePadding>
             <ListItemButton
               component={NavLink}
+              to="ambulance-list"
+              sx={{
+                "&.active": {
+                  bgcolor: "#33334d",
+                  borderRadius: "8px",
+                },
+              }}
+            >
+              <ListItemIcon>
+                <LocalHospitalIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Ambulance List" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
               to="track-ambulance"
               sx={{
                 "&.active": {
