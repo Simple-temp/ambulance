@@ -11,10 +11,15 @@ import {
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HistoryIcon from "@mui/icons-material/History";
-import SettingsIcon from "@mui/icons-material/Settings";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FeedbackIcon from "@mui/icons-material/Feedback";
+
+// New professional icons
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import EmergencyIcon from "@mui/icons-material/ReportProblem";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
+import AssessmentIcon from "@mui/icons-material/Assessment";
 
 const UserSideBar = () => {
   return (
@@ -42,12 +47,7 @@ const UserSideBar = () => {
             <ListItemButton
               component={NavLink}
               to="profile"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
             >
               <ListItemIcon>
                 <AccountCircleIcon sx={{ color: "white" }} />
@@ -59,31 +59,8 @@ const UserSideBar = () => {
           <ListItem disablePadding>
             <ListItemButton
               component={NavLink}
-              to="history"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
-            >
-              <ListItemIcon>
-                <HistoryIcon sx={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText primary="History" />
-            </ListItemButton>
-          </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton
-              component={NavLink}
               to="book-ambulance"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
             >
               <ListItemIcon>
                 <LocalHospitalIcon sx={{ color: "white" }} />
@@ -96,12 +73,7 @@ const UserSideBar = () => {
             <ListItemButton
               component={NavLink}
               to="ambulance-list"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
             >
               <ListItemIcon>
                 <LocalHospitalIcon sx={{ color: "white" }} />
@@ -113,18 +85,79 @@ const UserSideBar = () => {
           <ListItem disablePadding>
             <ListItemButton
               component={NavLink}
-              to="track-ambulance"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
+              to="history"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
             >
               <ListItemIcon>
-                <LocationOnIcon sx={{ color: "white" }} />
+                <HistoryIcon sx={{ color: "white" }} />
               </ListItemIcon>
-              <ListItemText primary="Tracking Ambulance" />
+              <ListItemText primary="History" />
+            </ListItemButton>
+          </ListItem>
+
+          {/* New professional ambulance options */}
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
+              to="dashboard"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
+            >
+              <ListItemIcon>
+                <DashboardIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Dashboard" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
+              to="emergency-requests"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
+            >
+              <ListItemIcon>
+                <EmergencyIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Emergency Requests" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
+              to="ambulance-fleet"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
+            >
+              <ListItemIcon>
+                <DirectionsCarIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Ambulance Fleet" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
+              to="medical-staff"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
+            >
+              <ListItemIcon>
+                <MedicalServicesIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Medical Staff" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
+              to="reports"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
+            >
+              <ListItemIcon>
+                <AssessmentIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Reports" />
             </ListItemButton>
           </ListItem>
 
@@ -132,12 +165,7 @@ const UserSideBar = () => {
             <ListItemButton
               component={NavLink}
               to="feedback"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
             >
               <ListItemIcon>
                 <FeedbackIcon sx={{ color: "white" }} />
@@ -145,36 +173,11 @@ const UserSideBar = () => {
               <ListItemText primary="Feedback" />
             </ListItemButton>
           </ListItem>
-
-          <ListItem disablePadding>
-            <ListItemButton
-              component={NavLink}
-              to="settings"
-              sx={{
-                "&.active": {
-                  bgcolor: "#33334d",
-                  borderRadius: "8px",
-                },
-              }}
-            >
-              <ListItemIcon>
-                <SettingsIcon sx={{ color: "white" }} />
-              </ListItemIcon>
-              <ListItemText primary="Settings" />
-            </ListItemButton>
-          </ListItem>
         </List>
       </Box>
 
       {/* Right content */}
-      <Box
-        sx={{
-          flex: 1,
-          p: 4,
-          bgcolor: "#f9f9f9",
-          overflowY: "auto",
-        }}
-      >
+      <Box sx={{ flex: 1, p: 4, bgcolor: "#f9f9f9", overflowY: "auto" }}>
         <Outlet />
       </Box>
     </Box>

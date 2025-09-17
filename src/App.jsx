@@ -20,6 +20,11 @@ import BookAmbulance from "./components/Pages/BookAmbulance";
 import Tracking from "./components/Pages/Tracking";
 import Feedback from "./components/Pages/Feedback";
 import AmbulanceList from "./components/Pages/AmbulanceList";
+import Dashboard from "./components/Pages/Dashboard";
+import EmergencyRequests from "./components/Pages/EmergencyRequests";
+import AmbulanceFleet from "./components/Pages/AmbulanceFleet";
+import MedicalStaff from "./components/Pages/MedicalStaff";
+import Reports from "./components/Pages/Reports";
 
 // Layout for normal pages (with Header + Footer)
 function MainLayout({ children }) {
@@ -44,6 +49,11 @@ function UserLayout() {
           <Route path="settings" element={<UserSettings />} />
           <Route path="book-ambulance" element={<BookAmbulance />} />
           <Route path="ambulance-list" element={<AmbulanceList />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="emergency-requests" element={<EmergencyRequests />} />
+          <Route path="ambulance-fleet" element={<AmbulanceFleet />} />
+          <Route path="medical-staff" element={<MedicalStaff />} />
+          <Route path="reports" element={<Reports />} />
           <Route path="track-ambulance" element={<Tracking />} />
           <Route path="feedback" element={<Feedback />} />
         </Routes>
