@@ -1,4 +1,3 @@
-
 import contact from '../../assets/contact.avif';
 
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -11,19 +10,24 @@ const ContactUs = () => {
     <div className="contact-container">
       {/* Left - Form Section */}
       <div className="contact-form">
-        <h2>Contact Us</h2>
-        <form>
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Email Address" />
+        <h2 className="contact-title">Get In Touch</h2>
+        <p className="contact-subtitle">
+          Have a question or want to work together? Fill out the form below and we’ll get back to you shortly.
+        </p>
+        <form className="contact-form-fields">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Email Address" required />
           <input type="tel" placeholder="Phone Number" />
-          <textarea rows="4" placeholder="Your Message" />
-          <button type="submit">Send Message</button>
+          <textarea rows="5" placeholder="Your Message" required />
+          <button type="submit" className="contact-btn">
+            Send Message
+          </button>
         </form>
         <div className="social-icons">
-          <FacebookIcon />
-          <TwitterIcon />
-          <LinkedInIcon />
-          <InstagramIcon />
+          <a href="#"><FacebookIcon /></a>
+          <a href="#"><TwitterIcon /></a>
+          <a href="#"><LinkedInIcon /></a>
+          <a href="#"><InstagramIcon /></a>
         </div>
       </div>
 

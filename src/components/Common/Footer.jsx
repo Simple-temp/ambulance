@@ -41,7 +41,7 @@ const Footer = () => {
           {/* Right */}
           <Grid item xs={12} md={6}>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 2 }}>
-              {["Home", "About", "Services", "Blog", "Contact", "FAQ"].map(
+              {["Home", "About", "Services", "Contact"].map(
                 (menu) => (
                   <Typography
                     key={menu}
