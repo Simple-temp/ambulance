@@ -15,7 +15,7 @@ const Home = () => {
         {/* <Locations />
         <AdditionalClass />
         <Paramedic /> */}
-        {/* <VideoSection /> */}
+        <VideoSection />
         {/* <OurResource />
         <ContactUs />
         <Testimonial /> */}

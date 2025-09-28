@@ -20,6 +20,7 @@ import EmergencyIcon from "@mui/icons-material/ReportProblem";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import MedicalServicesIcon from "@mui/icons-material/MedicalServices";
 import AssessmentIcon from "@mui/icons-material/Assessment";
+import LoginIcon from '@mui/icons-material/Login';
 
 const UserSideBar = () => {
   return (
@@ -171,6 +172,19 @@ const UserSideBar = () => {
                 <FeedbackIcon sx={{ color: "white" }} />
               </ListItemIcon>
               <ListItemText primary="Feedback" />
+            </ListItemButton>
+          </ListItem>
+
+          <ListItem disablePadding>
+            <ListItemButton
+              component={NavLink}
+              to="/"
+              sx={{ "&.active": { bgcolor: "#33334d", borderRadius: "8px" } }}
+            >
+              <ListItemIcon>
+                <LoginIcon sx={{ color: "white" }} /> {/* Logo Icon */}
+              </ListItemIcon>
+              <ListItemText primary="Logout" />
             </ListItemButton>
           </ListItem>
         </List>

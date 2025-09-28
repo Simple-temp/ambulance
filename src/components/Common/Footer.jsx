@@ -1,49 +1,91 @@
-
+import { Container, Grid, Divider, IconButton, Box, Typography, TextField, Button } from "@mui/material";
+import {
+  Facebook,
+  Twitter,
+  Instagram,
+  LinkedIn,
+  YouTube,
+} from "@mui/icons-material";
 
 const Footer = () => {
   return (
-    <div className="footer-container">
-      <div className="footer-top">
-        {/* Left Side */}
-        <div className="footer-left">
-          <h2>Subscribe to Our Newsletter</h2>
-          <p>Stay updated with the latest news and offers.</p>
-          <div className="subscribe-form">
-            <input type="email" placeholder="Enter your email" />
-            <button>Subscribe</button>
-          </div>
-        </div>
+    <Box sx={{ backgroundColor: "#0f172a", color: "white", pt: 6, pb: 3, mt: 6 }}>
+      <Container maxWidth="lg">
+        <Grid container spacing={6}>
+          {/* Left */}
+          <Grid item xs={12} md={6}>
+            <Typography variant="h5" fontWeight={600} gutterBottom>
+              Subscribe to Our Newsletter
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 2, color: "#cbd5e1" }}>
+              Stay updated with the latest news and offers.
+            </Typography>
+            <Box sx={{ display: "flex", gap: 1 }}>
+              <TextField
+                variant="outlined"
+                placeholder="Enter your email"
+                size="small"
+                fullWidth
+                sx={{
+                  backgroundColor: "white",
+                  borderRadius: 1,
+                  "& .MuiOutlinedInput-root": { borderRadius: 1 },
+                }}
+              />
+              <Button variant="contained" color="primary">
+                Subscribe
+              </Button>
+            </Box>
+          </Grid>
 
-        {/* Right Side */}
-        <div className="footer-right">
-          <div className="footer-menu">
-            <span>Home</span>
-            <span>About</span>
-            <span>Services</span>
-            <span>Blog</span>
-            <span>Contact</span>
-            <span>FAQ</span>
-          </div>
-          <p className="footer-description">
-            Explore our services and enjoy seamless support from our dedicated team.
-          </p>
-        </div>
-      </div>
+          {/* Right */}
+          <Grid item xs={12} md={6}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 2 }}>
+              {["Home", "About", "Services", "Blog", "Contact", "FAQ"].map(
+                (menu) => (
+                  <Typography
+                    key={menu}
+                    variant="body2"
+                    sx={{ cursor: "pointer", "&:hover": { color: "#38bdf8" } }}
+                  >
+                    {menu}
+                  </Typography>
+                )
+              )}
+            </Box>
+            <Typography variant="body2" sx={{ color: "#cbd5e1" }}>
+              Explore our services and enjoy seamless support from our dedicated
+              team.
+            </Typography>
+          </Grid>
+        </Grid>
 
-      <hr className="footer-divider" />
+        <Divider sx={{ my: 4, borderColor: "#334155" }} />
 
-      {/* Bottom Row */}
-      <div className="footer-bottom">
-        <span>© 2025 YourCompany. All rights reserved.</span>
-        <div className="footer-socials">
-          <i className="bi bi-facebook"></i>
-          <i className="bi bi-twitter-x"></i>
-          <i className="bi bi-instagram"></i>
-          <i className="bi bi-linkedin"></i>
-          <i className="bi bi-youtube"></i>
-        </div>
-      </div>
-    </div>
+        {/* Bottom */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            alignItems: "center",
+          }}
+        >
+          <Typography variant="body2" sx={{ color: "#94a3b8" }}>
+            © 2025 YourCompany. All rights reserved.
+          </Typography>
+          <Box>
+            {[Facebook, Twitter, Instagram, LinkedIn, YouTube].map(
+              (Icon, idx) => (
+                <IconButton key={idx} color="inherit">
+                  <Icon />
+                </IconButton>
+              )
+            )}
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 
