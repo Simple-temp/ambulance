@@ -67,7 +67,7 @@ const Header = () => {
           </Box> */}
 
           {/* Nav Links */}
-          {/* <Link to="/about" style={{ textDecoration: "none" }}>
+          <Link to="/about" style={{ textDecoration: "none" }}>
             <Button
               sx={{
                 color: "#fff",
@@ -99,7 +99,7 @@ const Header = () => {
             >
               Contact
             </Button>
-          </Link> */}
+          </Link>
 
           {/* CTA Button */}
           <Link to="/tryai" style={{ textDecoration: "none" }}>

@@ -16,49 +16,64 @@ import {
   DialogActions,
   Stack,
   TextField,
+  Chip,
 } from "@mui/material";
 
 const AmbulanceList = () => {
   const [ambulances, setAmbulances] = useState([
     {
       id: 1,
-      name: "Ambulance A",
-      locationRange: "5-10 km",
-      costRange: "$50 - $100",
-      averageDuration: "20 mins",
+      name: "ICU Ambulance",
+      type: "ICU",
+      locationRange: "0-20 km",
+      costRange: "$150 - $250",
+      averageDuration: "15-25 mins",
       seatNumber: 4,
     },
     {
       id: 2,
-      name: "Ambulance B",
-      locationRange: "10-20 km",
-      costRange: "$40 - $90",
-      averageDuration: "30 mins",
-      seatNumber: 6,
+      name: "CCU Ambulance",
+      type: "CCU",
+      locationRange: "5-15 km",
+      costRange: "$120 - $200",
+      averageDuration: "20 mins",
+      seatNumber: 4,
     },
     {
       id: 3,
-      name: "Ambulance C",
-      locationRange: "0-15 km",
-      costRange: "$30 - $70",
-      averageDuration: "25 mins",
-      seatNumber: 3,
+      name: "NICU Ambulance",
+      type: "NICU",
+      locationRange: "0-10 km",
+      costRange: "$180 - $280",
+      averageDuration: "18 mins",
+      seatNumber: 2,
     },
     {
       id: 4,
-      name: "Ambulance D",
-      locationRange: "5-12 km",
-      costRange: "$60 - $120",
-      averageDuration: "18 mins",
-      seatNumber: 5,
+      name: "Freezing Ambulance",
+      type: "Freezing",
+      locationRange: "10-30 km",
+      costRange: "$200 - $400",
+      averageDuration: "30 mins",
+      seatNumber: 2,
     },
     {
       id: 5,
-      name: "Ambulance E",
-      locationRange: "12-22 km",
-      costRange: "$45 - $95",
-      averageDuration: "35 mins",
-      seatNumber: 7,
+      name: "AC Ambulance",
+      type: "AC",
+      locationRange: "0-25 km",
+      costRange: "$80 - $150",
+      averageDuration: "22 mins",
+      seatNumber: 5,
+    },
+    {
+      id: 6,
+      name: "Air Ambulance",
+      type: "Air",
+      locationRange: "Domestic & International",
+      costRange: "$2000+",
+      averageDuration: "Depends on distance",
+      seatNumber: 6,
     },
   ]);
 
@@ -102,6 +117,26 @@ const AmbulanceList = () => {
     });
   };
 
+  // Color mapping for ambulance type
+  const getTypeColor = (type) => {
+    switch (type) {
+      case "ICU":
+        return "error"; // red
+      case "CCU":
+        return "warning"; // orange
+      case "NICU":
+        return "secondary"; // purple
+      case "Freezing":
+        return "info"; // blue
+      case "AC":
+        return "success"; // green
+      case "Air":
+        return "primary"; // dark blue
+      default:
+        return "default";
+    }
+  };
+
   return (
     <Box p={3}>
       <TableContainer component={Paper}>
@@ -110,6 +145,7 @@ const AmbulanceList = () => {
             <TableRow>
               <TableCell>ID</TableCell>
               <TableCell>Name</TableCell>
+              <TableCell>Type</TableCell>
               <TableCell>Location Range</TableCell>
               <TableCell>Cost Range</TableCell>
               <TableCell>Avg Duration</TableCell>
@@ -125,6 +161,14 @@ const AmbulanceList = () => {
                 <TableRow key={a.id}>
                   <TableCell>{a.id}</TableCell>
                   <TableCell>{a.name}</TableCell>
+                  <TableCell>
+                    <Chip
+                      label={a.type}
+                      color={getTypeColor(a.type)}
+                      size="small"
+                      sx={{ fontWeight: "bold" }}
+                    />
+                  </TableCell>
                   <TableCell>{a.locationRange}</TableCell>
                   <TableCell>{a.costRange}</TableCell>
                   <TableCell>{a.averageDuration}</TableCell>

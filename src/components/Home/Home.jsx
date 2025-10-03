@@ -6,17 +6,21 @@ import VideoSection from "../Common/VideoSection";
 import OurResource from "../Common/OurResource";
 import ContactUs from "../Common/ContactUs";
 import Testimonial from "../Common/Testimonial";
+import Services from "../Common/Services";
+import AboutUs from "../Common/AboutUs";
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <div className="container">
+        <AboutUs/>
         <Locations />
-        <AdditionalClass />
-        <Paramedic />
+        {/* <AdditionalClass />
+        <Paramedic /> */}
+        <Services />
         <VideoSection />
-        <OurResource />
+        {/* <OurResource /> */}
         <Testimonial />
         <ContactUs />
       </div>

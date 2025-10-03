@@ -1,4 +1,13 @@
-import { Container, Grid, Divider, IconButton, Box, Typography, TextField, Button } from "@mui/material";
+import {
+  Container,
+  Grid,
+  Divider,
+  IconButton,
+  Box,
+  Typography,
+  TextField,
+  Button,
+} from "@mui/material";
 import {
   Facebook,
   Twitter,
@@ -6,10 +15,13 @@ import {
   LinkedIn,
   YouTube,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Box sx={{ backgroundColor: "#0f172a", color: "white", pt: 6, pb: 3, mt: 6 }}>
+    <Box
+      sx={{ backgroundColor: "#0f172a", color: "white", pt: 6, pb: 3, mt: 6 }}
+    >
       <Container maxWidth="lg">
         <Grid container spacing={6}>
           {/* Left */}
@@ -41,17 +53,26 @@ const Footer = () => {
           {/* Right */}
           <Grid item xs={12} md={6}>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mb: 2 }}>
-              {["Home", "About", "Services", "Contact"].map(
-                (menu) => (
+              {[
+                { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
+                { name: "Services", path: "/services" },
+                { name: "Contact", path: "/contact" },
+                { name: "Emergency Requests", path: "/user/emergency-requests" },
+              ].map((menu) => (
+                <Link
+                  key={menu.name}
+                  to={menu.path}
+                  style={{ textDecoration: "none" }}
+                >
                   <Typography
-                    key={menu}
                     variant="body2"
                     sx={{ cursor: "pointer", "&:hover": { color: "#38bdf8" } }}
                   >
-                    {menu}
+                    {menu.name}
                   </Typography>
-                )
-              )}
+                </Link>
+              ))}
             </Box>
             <Typography variant="body2" sx={{ color: "#cbd5e1" }}>
               Explore our services and enjoy seamless support from our dedicated

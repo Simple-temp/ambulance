@@ -25,6 +25,8 @@ import EmergencyRequests from "./components/Pages/EmergencyRequests";
 import AmbulanceFleet from "./components/Pages/AmbulanceFleet";
 import MedicalStaff from "./components/Pages/MedicalStaff";
 import Reports from "./components/Pages/Reports";
+import AboutUs from "./components/Common/AboutUs";
+import Services from "./components/Common/Services";
 
 // Layout for normal pages (with Header + Footer)
 function MainLayout({ children }) {
@@ -131,6 +133,26 @@ function App() {
             </MainLayout>
           }
         />
+
+        <Route
+          path="/about"
+          element={
+            <MainLayout>
+              <AboutUs />
+            </MainLayout>
+          }
+        />
+
+        <Route
+          path="/services"
+          element={
+            <MainLayout>
+              <Services />
+            </MainLayout>
+          }
+        />
+
+
         <Route
           path="/testimonial"
           element={
