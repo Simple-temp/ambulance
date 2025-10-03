@@ -54,52 +54,56 @@ const Services = () => {
       </Typography>
 
       {/* Grid of cards */}
-      <Grid container spacing={4}>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          gap: 3,
+          justifyContent: "space-between",
+        }}
+      >
         {ambulanceServices.map((service, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card
-              sx={{
-                borderRadius: 3,
-                boxShadow: 3,
-                p: 2,
-                height: "100%",
-                textAlign: "left",
-              }}
-            >
-              <CardContent>
-                <Typography
-                  variant="h6"
+          <Card
+            key={index}
+            sx={{
+              borderRadius: 3,
+              boxShadow: 3,
+              p: 2,
+              flex: "0 1 calc(33.333% - 16px)", // 3 columns
+              minWidth: 250,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+            }}
+          >
+            <CardContent>
+              <Typography
+                variant="h6"
+                sx={{ fontWeight: "bold", color: "#1d4ed8", mb: 1 }}
+              >
+                {service.title}
+              </Typography>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+                {service.description}
+              </Typography>
+              <Link
+                to="/user/ambulance-list"
+                style={{ textDecoration: "none" }}
+              >
+                <Button
+                  variant="contained"
                   sx={{
-                    fontWeight: "bold",
-                    color: "#1d4ed8",
-                    mb: 1,
+                    backgroundColor: "#f97316",
+                    "&:hover": { backgroundColor: "#ea580c" },
                   }}
                 >
-                  {service.title}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mb: 3 }}
-                >
-                  {service.description}
-                </Typography>
-                <Link to="/user/ambulance-list">
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#f97316",
-                      "&:hover": { backgroundColor: "#ea580c" },
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
-          </Grid>
+                  Learn More
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };
