@@ -9,7 +9,7 @@ const fetchStats = () => {
       resolve({
         totalAmbulances: 25,
         totalStaff: 18,
-        totalEmergenciesHandled: 135,
+        totalEmergenciesHandled: 9,
       });
     }, 1000);
   });

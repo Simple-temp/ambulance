@@ -1,31 +1,78 @@
 import React from "react";
 import { motion } from "framer-motion";
-import location1 from "../../assets/l1.jpg";
-import location2 from "../../assets/l2.jpeg";
-import location3 from "../../assets/l3.webp";
+
 
 // ✅ Realistic ambulance service location data
 const data = [
   {
     id: 1,
     title: "Dhaka Central Station",
-    img: location1,
+    img: "https://24ambulance.com/wp-content/uploads/2023/12/Ambulance-service-24Ambulance-scaled.jpg",
     description:
       "Our main ambulance hub located in Dhaka city ensures the fastest emergency response within 10–15 minutes across the metropolitan area.",
   },
   {
     id: 2,
     title: "Uttara Emergency Point",
-    img: location2,
+    img: "https://hawladerambulance.com/wp-content/uploads/2022/01/Dhaka-ambulance-service-hawlader.jpg",
     description:
       "Covering Uttara, Tongi, and airport zones with 24/7 standby ambulances equipped with life-saving medical equipment.",
   },
   {
     id: 3,
     title: "Mirpur Medical Hub",
-    img: location3,
+    img: "https://ambulanceservicemirpur.com/wp-content/uploads/2025/01/2-1-1024x768.jpeg",
     description:
       "Specialized for quick transfers to National Heart Foundation, Kidney Hospital, and nearby critical care centers.",
+  },
+  {
+    id: 4,
+    title: "Banani Fast Response Unit",
+    img: "https://ambulancelagbe.com/wp-content/uploads/2025/05/Bonani-400x250.jpg",
+    description:
+      "Dedicated to serving Banani, Gulshan, and Mohakhali areas, ensuring high-priority emergency reach within 8 minutes.",
+  },
+  {
+    id: 5,
+    title: "Dhanmondi Medical Corridor",
+    img: "https://ambulancelagbe.com/wp-content/uploads/2025/07/Dhanmondi-Ambulance-Service.jpg",
+    description:
+      "Strategically located near major hospitals for rapid patient transport and advanced medical support in Dhanmondi and Lalmatia.",
+  },
+  {
+    id: 6,
+    title: "Savar Highway Point",
+    img: "https://gdb.voanews.com/0136faa7-0dc6-4e08-9a17-87bec6822dfc_cx0_cy5_cw0_w1080_h608_s.jpg",
+    description:
+      "Covers Nabinagar, Savar EPZ, and Jahangirnagar University areas with highway-ready ambulances for accident response.",
+  },
+  {
+    id: 7,
+    title: "Gazipur Industrial Zone",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC4HyXgkFaYyDxQi4TxB4mKe2d4qgrhCOjLg&s",
+    description:
+      "Provides emergency medical coverage to industrial workers in Gazipur, Konabari, and Boardbazar regions.",
+  },
+  {
+    id: 8,
+    title: "Narayanganj River Port Station",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXZemxng2iuAOYobXvzsuZsigG7275xnLdckkbrOmzk33irjsUD3DmJ8tUy7TmA4iJyxA&usqp=CAU",
+    description:
+      "Equipped with specialized ambulances for port and factory emergencies around Narayanganj and Fatullah.",
+  },
+  {
+    id: 9,
+    title: "Keraniganj Support Base",
+    img: "https://ambulancebd24.com/wp-content/uploads/2023/04/Freezing-Ambulance-khulna.jpg",
+    description:
+      "Ensures quick access to the southern Dhaka region, including Keraniganj and Basila areas, during high-traffic hours.",
+  },
+  {
+    id: 10,
+    title: "Ashulia Rapid Response Base",
+    img: "https://ambulancebd24.com/wp-content/uploads/2023/04/Freezing-Ambulance-khulna.jpg",
+    description:
+      "Supports emergency evacuations and road accident rescues in Ashulia, Savar Bazar, and DEPZ surroundings.",
   },
 ];
 
@@ -36,7 +83,7 @@ const Locations = () => {
         className="location-inner"
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: .3 }}
       >
         <h1
           style={{
@@ -89,7 +136,7 @@ const Locations = () => {
                   style={{
                     fontSize: "1.3rem",
                     fontWeight: "bold",
-                    color: "#ffffffff",
+                    color: "#b71c1c",
                   }}
                 >
                   {item.title}

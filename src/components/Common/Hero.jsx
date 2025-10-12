@@ -10,6 +10,7 @@ import {
   Paper,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import bg from "../../assets/bg.jpg"
 
 const Hero = () => {
   const [tab, setTab] = useState(0);
@@ -20,14 +21,18 @@ const Hero = () => {
 
   return (
     <Box
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        minHeight: "100vh",
-        px: 6,
-        background: "linear-gradient(to right, #e0f7fa, #b3e5fc)",
-      }}
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    minHeight: "100vh",
+    px: 6,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.8)), url(${bg})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    color: "#fff",
+  }}
     >
       {/* Left Side - Hero Text */}
       <motion.div
@@ -38,7 +43,7 @@ const Hero = () => {
         <Typography variant="h3" fontWeight="bold" gutterBottom>
           Fast, Reliable & 24/7 Emergency Ambulance Service
         </Typography>
-        <Typography variant="body1" color="textSecondary" mb={3}>
+        <Typography variant="body1" color="" mb={3}>
           We provide immediate ambulance assistance across Dhaka city and nearby
           areas. Your safety is our top priority.
         </Typography>
